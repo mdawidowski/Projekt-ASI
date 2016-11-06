@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Opis:</strong>
   <%= @quest.description %>
 </p>
 
 <p>
-  <strong>Answerone:</strong>
+  <strong>Odpowiedź nr 1:</strong>
   <%= @quest.answerone %>
 </p>
 
 <p>
-  <strong>Answertwo:</strong>
+  <strong>Odpowiedź nr 2:</strong>
   <%= @quest.answertwo %>
 </p>
 
 <p>
-  <strong>Answerthree:</strong>
+  <strong>Odpowiedź nr 3:</strong>
   <%= @quest.answerthree %>
 </p>
 
 <p>
-  <strong>Answergood:</strong>
+  <strong>Nr poprawnej odpowiedzi:</strong>
   <%= @quest.answergood %>
 </p>
 
-<%= link_to 'Edit', edit_quest_path(@quest) %> |
-<%= link_to 'Back', quests_path %>
+<%= link_to 'Edytuj', edit_quest_path(@quest) %> |
+<%= link_to 'Wróć', quests_path %>
