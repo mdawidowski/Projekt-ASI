@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'home/header' %>
+    <div class="container">
+      <div class="jumbotron">
+      <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
