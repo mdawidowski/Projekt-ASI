@@ -12,10 +12,11 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav navbar-right">
 <%= link_to 'Strona główna', root_path, class: 'btn btn-default' %>
-<%= link_to 'Gra', home_game_path, class: 'btn btn-default' %>
 <%= link_to 'O mnie', home_about_path, class: 'btn btn-default' %>
+
 <% if user_signed_in? %>
-  <%= link_to 'Lista pytań', quests_path, class: 'btn btn-info' %>
+<%= link_to 'Gra', home_game_path, class: 'btn btn-success' %>
+<%= link_to 'Lista pytań', quests_path, class: 'btn btn-info' %>
   <%= link_to 'Edycja profilu', edit_user_registration_path, class: 'btn btn-info' %>
   <%= link_to 'Wylogowanie', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 <% else %>

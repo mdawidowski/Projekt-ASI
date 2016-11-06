@@ -1,6 +1,7 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index,:show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /quests
   # GET /quests.json
   def index
@@ -14,7 +15,7 @@ class QuestsController < ApplicationController
 
   # GET /quests/new
   def new
-    @quest = Quest.new
+    @quest = current_user.quests.build
   end
 
   # GET /quests/1/edit
@@ -24,7 +25,7 @@ class QuestsController < ApplicationController
   # POST /quests
   # POST /quests.json
   def create
-    @quest = Quest.new(quest_params)
+    @quest = current_user.quests.build(quest_params)
 
     respond_to do |format|
       if @quest.save
@@ -71,4 +72,8 @@ class QuestsController < ApplicationController
     def quest_params
       params.require(:quest).permit(:description, :answerone, :answertwo, :answerthree, :answergood)
     end
+    def correct_user
+      @quest = current_user.quests.find_by(id: params[:id])
+      redirect_to root_path, notice: "Nie jesteś uprawniony do edycji" if @quest.nil?
+end
 end
