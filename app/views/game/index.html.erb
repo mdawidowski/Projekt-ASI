@@ -1,3 +1,7 @@
-<h2>Gra</h2>
-
-<%= @game.quest.answerone %>
+<h2><%= Quest.order("created_at").pluck(:description).last %></h2>
+<br>
+<button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answerone).last %></button>
+<br>
+<button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answertwo).last %></button>
+<br>
+<button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answerthree).last %></button>

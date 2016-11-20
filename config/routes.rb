@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
   devise_for :users
   resources :quests
+  resources :games
   root 'home#index'
   get 'home/about'
   get 'game/index'

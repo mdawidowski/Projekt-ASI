@@ -15,7 +15,8 @@
 <%= link_to 'O mnie', home_about_path, class: 'btn btn-default' %>
 
 <% if user_signed_in? %>
-<%= link_to 'Lista pytań', quests_path, class: 'btn btn-info' %>
+  <%= link_to 'Gra', game_index_path, class: 'btn btn-info' %>
+  <%= link_to 'Lista pytań', quests_path, class: 'btn btn-info' %>
   <%= link_to 'Edycja profilu', edit_user_registration_path, class: 'btn btn-info' %>
   <%= link_to 'Wylogowanie', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 <% else %>
