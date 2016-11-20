@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+<h1>Strona w budowie!</h2>
 <% score = 0 %>
 <h2><%= Quest.order('id').pluck(:description).last %></h2>
 <br>
