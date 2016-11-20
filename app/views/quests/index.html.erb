@@ -7,6 +7,7 @@
   <thead>
     <tr>
       <th>Akcje</th>
+      <th>Id</th>
       <th>Opis</th>
       <th>Odpowiedź nr 1</th>
       <th>Odpowiedź nr 2</th>
@@ -21,6 +22,7 @@
         <td><%= link_to 'Pokaż', quest, class: 'btn btn-sm btn-info'  %>
         <%= link_to 'Edytuj', edit_quest_path(quest), class: 'btn btn-sm btn-info'  %>
         <%= link_to 'Usuń', quest, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'  %></td>
+        <td><%= quest.id %></td>
         <td><%= quest.description %></td>
         <td><%= quest.answerone %></td>
         <td><%= quest.answertwo %></td>

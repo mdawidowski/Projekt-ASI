@@ -10,6 +10,7 @@ class QuestsController < ApplicationController
 
   # GET /quests/1
   # GET /quests/1.json
+
   def show
   end
 
@@ -75,5 +76,5 @@ class QuestsController < ApplicationController
     def correct_user
       @quest = current_user.quests.find_by(id: params[:id])
       redirect_to root_path, notice: "Nie jesteś uprawniony do edycji" if @quest.nil?
-end
+    end
 end
