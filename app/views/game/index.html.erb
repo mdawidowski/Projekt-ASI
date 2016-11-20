@@ -1,7 +1,13 @@
-<h2><%= Quest.order("created_at").pluck(:description).last %></h2>
+<% if user_signed_in? %>
+<% score = 0 %>
+<h2><%= Quest.order('id').pluck(:description).last %></h2>
 <br>
 <button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answerone).last %></button>
 <br>
 <button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answertwo).last %></button>
 <br>
 <button type="button" class="btn btn-default"><%= Quest.order("created_at").pluck(:answerthree).last %></button>
+<br><br><h2>Punkty: <%= score %> </h2>
+<% else %>
+<h2>Przykro mi, ale nie jesteś zalogowany</h2>
+<% end %>
